@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
 import logo from '../images/callup-favicon.png';
 
-import Header from './blocks/_header.js';
-import Footer from './blocks/_footer.js';
+import Header from '../containers/blocks/_header';
+import Footer from '../containers/blocks/_footer';
 
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
         <Header />
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        { this.props.children }
         <Footer />
       </div>
     );

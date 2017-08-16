@@ -1,13 +1,38 @@
-html {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+/*remove corners of default navbar AND margin bottom*/
+.navbar {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+/*turn 3 bar navbar icon for toggling to WHITE*/
+.navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+/*change all links to white on navbar*/
+#myNavbar > ul > li > a {
+  color: #fff;
+}
+/*change focus and hover colors for navbar*/
+.nav > li > a:focus,
+.nav > li > a:hover {
+  background-color: rgba(230, 228, 228, 0.5);
+  background-image: none;
+  color: #fff;
 }
 
-body {
-  position: relative;
-  margin: 0;
-  padding-bottom: 3rem;
-  min-height: 100%;
+
+/*  home page / call up index  */
+/*  -------------------------  */
+/*over ride card spacing*/
+.card-text, .card-data, .card-title {
+  margin: 0px !important;
+}
+
+.card-title {
+  display: inline-block;
+}
+
+#story .text-help,
+#story .error {
+  font-family: 'Alfa Slab One';
+  color: rgb(255, 68, 44);
 }

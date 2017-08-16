@@ -42,7 +42,7 @@ class Signin extends Component {
             >
               <object
                 className="center-block"
-                type="image/svg+xml" data="images/callup_logo_white.svg"
+                type="image/svg+xml" data="../images/callup_logo_white.svg"
                 width="40%"
                 ></object>
               <fieldset className="form-group">
