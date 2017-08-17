@@ -158,7 +158,7 @@ class CallUpDetail extends Component {
                   <p style={{ fontSize: 1.2 + 'em', justifyContent: 'center', margin: 0, color: '#fff' }}>Boom (sign) { callup.who }s Call Up</p>
                 </button>
                 <p>
-                { _.keysIn(callup.signatures) }
+                { _.keysIn(callup.signatures).length }
                 { console.log(callup.signatures) }
                 </p>
               </div>
