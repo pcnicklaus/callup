@@ -1,8 +1,7 @@
 import {
   CREATE_CALLUP,
   FETCH_CALLUPS,
-  FETCH_CALLUP,
-  VOTE
+  FETCH_CALLUP
  } from '../actions/types';
 
 export default function( state = {}, action) {
@@ -14,8 +13,6 @@ export default function( state = {}, action) {
       return { ...state, action }
     case FETCH_CALLUP:
       return action.payload
-    case VOTE:
-      return { ...state }
   }
 
   return state;

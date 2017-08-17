@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
@@ -36,7 +37,7 @@ class CallUpDetail extends Component {
   };
 
   submitSignature() {
-    const id = this.props.params.id;
+    const callup_id = this.props.params.id;
     const formData = { name: this.state.name, email: this.state.email, address: this.state.address };
 
     const callback = () => {
@@ -44,7 +45,8 @@ class CallUpDetail extends Component {
       const newState = {name:'', email:'', address:'', isModalOpen: false};
       this.setState(newState);
     }
-    this.props.vote(id, formData, callback);
+
+    this.props.vote(callup_id, formData, callback);
   }
 
   renderCallUp() {
@@ -57,21 +59,30 @@ class CallUpDetail extends Component {
       </div>
     )
   }
+  renderSignatures() {
+    return(
+      <div>
+        <p></p>
+      </div>
+    )
+  }
 
   render() {
     const { callup } = this.props;
 
     if (!callup) { return; }
+    // console.log('callup2', Objecallup['signatures'].length)
+    // console.log('ccallup3', callup.signatures.length)
 
     return (
       <div className="row" style={{ marginBottom: 100 }} >
           <Modal
-          isOpen={this.state.isModalOpen}
-          onClose={() => this.closeModal()}
-          style={{ paddingLeft: 40, paddingRight: 40, paddingTop: 20, paddingBottom: 40, borderRadius: 25,  }}>
+            isOpen={this.state.isModalOpen}
+            onClose={() => this.closeModal()}
+            style={{ paddingLeft: 40, paddingRight: 40, paddingTop: 20, paddingBottom: 40, borderRadius: 25,  }}>
 
             <div style={{ margin: 20 }}>
-            <h1 style={{ color: "#ff442c", fontSize: 3 + 'em', marginBottom: 2 }}>Give <span style={{ fontSize: 1.5 + 'em', color: '#004687' }}>{ this.props.callup.who }</span> a boom!</h1>
+            <h1 style={{ color: "#ff442c", fontSize: 3 + 'em', marginBottom: 2 }}>Give <span style={{ fontSize: 1.5 + 'em', color: '#004687' }}>{ callup.who }</span> a boom!</h1>
             <p style={{ color: "#004687", }}>In other words, sign a nomination/petition for them!</p>
 
             <hr style={{ borderTop: "1px solid #ff442c" }} />
@@ -146,11 +157,15 @@ class CallUpDetail extends Component {
                   style={{ color: '#fffff', padding: 10, width: 100 + '%', backgroundColor: '#ff442c', border: 'none' }}>
                   <p style={{ fontSize: 1.2 + 'em', justifyContent: 'center', margin: 0, color: '#fff' }}>Boom (sign) { callup.who }s Call Up</p>
                 </button>
+                <p>
+                { _.keysIn(callup.signatures) }
+                { console.log(callup.signatures) }
+                </p>
               </div>
             </div>
           </div>
           <div className="col-md-6" key={`${callup.who}-${callup.for_what}`}>
-            <img src={ this.props.callup.imageURL } className="img-responsive" alt="" />
+            <img src={ callup.imageURL } className="img-responsive" alt="" />
           </div>
         </div>
 
@@ -159,9 +174,12 @@ class CallUpDetail extends Component {
   }
 
 }
+  // <p>{ this.state.votes.count() }s Booms</p>
 
 function mapStateToProps(state) {
-  return { callup: state.callups }
+  return {
+    callup: state.callups
+  }
 }
 
 export default connect(mapStateToProps, actions)(CallUpDetail);

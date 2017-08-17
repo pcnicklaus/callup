@@ -2,13 +2,36 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import * as actions from '../actions';
 
-// import { }
+/*
+      TO DOOOOOOOO
+  - create a list and loop over it for the suffs
+
+*/
 
 class Resources extends Component {
 
+  renderList = () => {
+    return(
+      <div className="col-md-12">
+
+          <div className="row">
+
+            <a href="https://ballotpedia.org/Open_seats_in_the_2017_state_legislative_elections">
+              <img src="../images/bp.png" className="img img-responsive"/>
+            </a>
+          </div>
+          <div className="row">
+            <p>
+              ballotpedia is a wicked awesome resource and my number one go to resource for all things elections. This link is to their report titled, "Open seats in the 2017 state legislative elections".
+            </p>
+          </div>
+      </div>
+    )
+  }
+
   render() {
     return (
-      <div>
+      <div style={{ marginBottom: 100 }}>
         <div className="container-fluid" id="resources" style={{ marginBotton: 50 }}>
 
           <div className="row" style={{ paddingTop: 40, paddingBottom: 30, backgroundColor: '#BBBEBE', lineHeight: 0.85 }}>
@@ -33,30 +56,25 @@ class Resources extends Component {
                 <li>Identifying and creating a bot/scraper or something that will go out and grab all the info about the open / uncontested elections throughout the country</li>
                 <li>Putting this info on our site in an easy, searchable way</li>
               </ol>
-              <p>Okay, so it isn't a ridiculously long list but that doesn't mean it isnt hard or going to be a quick project...
-                <br />
-                What it does mean is if anyone wants to help, you'd be on my Christmas card list for eternity! But, in lieu of the app, here's some good ole fashioned links and stuff :)
+              <p>
+                Okay, so it isn't a ridiculously long list but that doesn't mean it isnt hard or going to be a quick project...
+              </p>
+              <p>
+                What it does mean is if anyone wants to help, youd be on my Christmas card list for eternity! But, in lieu of the app, onward thusly to some good ole fashioned links and stuff :)
               </p>
             </div>
           </div>
+
           <div className="row">
             <div className="col-md-2"></div>
             <div className="col-md-8">
-              <p>
-                ballotpedia is a wicked awesome resource and my number one go to resource for all things elections.
-              </p>
-              <Link to="https://ballotpedia.org/Open_seats_in_the_2017_state_legislative_elections">ballotpedia
-              </Link>
+
+                { this.renderList() }
 
 
             </div>
+          </div>
 
-
-
-
-
-
-            </div>
 
         </div>
       </div>

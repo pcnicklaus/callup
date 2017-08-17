@@ -8,5 +8,6 @@ export const FETCH_CALLUPS = 'fetch_callups';
 export const FETCH_CALLUP = 'fetch_callup';
 export const ACTIVE_CALLUP = 'active_callup';
 export const VOTE = 'vote';
+export const FETCH_VOTE_COUNT = 'FETCH_VOTE_COUNT';
 
 export const TOGGLE_BURGER = 'toggle_burger';

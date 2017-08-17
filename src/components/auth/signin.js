@@ -34,7 +34,7 @@ class Signin extends Component {
           <div className="col-md-3 col-xs-1">
           </div>
 
-          <div className="col-md-6 col-xs-10" style={{ paddingTop:'40'}}>
+          <div className="col-md-6 col-xs-10" style={{ paddingTop: 40 }}>
 
             <form
               style={ styles }

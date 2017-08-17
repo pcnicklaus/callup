@@ -10,7 +10,8 @@ import {
   FETCH_CALLUP,
   ACTIVE_CALLUP,
   TOGGLE_BURGER,
-  VOTE
+  VOTE,
+  FETCH_VOTE_COUNT
 } from './types';
 
 const ROOT_URL = 'https://callup-server.herokuapp.com';
@@ -63,7 +64,6 @@ export function signoutUser() {
 
 
 export function createCallUp(formData, cb) {
-  console.log('formData in ACTIONS', formData)
   return function(dispatch) {
     axios.post(`${ROOT_URL}/callup`, formData, {
       headers: { authorization: localStorage.getItem('token')}
@@ -74,24 +74,6 @@ export function createCallUp(formData, cb) {
 
         dispatch({
           type: CREATE_CALLUP,
-          payload: response.data
-        });
-      })
-      .then( () => { cb(); });
-  }
-}
-
-export function vote(id, formData, cb) {
-  console.log("here!!!")
-  return function(dispatch) {
-    axios.post(`${ROOT_URL}/callup/:id`, formData, {
-      headers: { authorization: localStorage.getItem('token')}
-    })
-      .then(response => {
-        console.log('VOTE response in actions/index', response);
-
-        dispatch({
-          type: VOTE,
           payload: response.data
         });
       })
@@ -123,8 +105,6 @@ export function fetchCallUp(id) {
     })
       .then(response => {
 
-        console.log('response.data in actions/index Fetch callup - 1', response.data);
-
         dispatch({
           type: FETCH_CALLUP,
           payload: response.data
@@ -139,6 +119,35 @@ export function activeCallup(callup) {
     payload: callup
   }
 }
+
+export function vote(id, formData, cb) {
+  console.log("here!!!")
+  return function(dispatch) {
+    axios.post(`${ROOT_URL}/callup/${id}/signature`, formData)
+      .then(response => {
+        console.log('VOTE response in actions/index', response);
+
+        dispatch({
+          type: FETCH_CALLUP,
+          payload: response.data
+        });
+      })
+      .then( () => { cb(); });
+  }
+}
+
+// export function fetchVoteCount(id) {
+//   return function(dispatch) {
+//     axios.get(`${ROOT_URL}/callup/${id}/signature`)
+//       .then(response => {
+//         console.log('FIRING response oin reducer', response);
+//         dispatch({
+//           type: FETCH_VOTE_COUNT,
+//           payload: response.data
+//         });
+//       })
+//   }
+// }
 
 //
 // export function fetchMessage() {
