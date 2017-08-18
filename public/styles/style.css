@@ -34,11 +34,20 @@
 #story .text-help,
 #story .error {
   font-family: 'Alfa Slab One';
-  color: rgb(255, 68, 44);
+  color: #fff;
 }
 
 .center {
     margin: auto;
     width: 50%;
     padding: 10px;
+}
+
+.SocialMediaShareButton:hover,
+.SocialMediaShareButton:focus {
+  outline: none !important;
+}
+
+#social_share > div:focus {
+  outline: none !important;
 }

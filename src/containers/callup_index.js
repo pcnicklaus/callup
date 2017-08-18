@@ -43,7 +43,7 @@ class Home extends Component {
         return (
           <div
             className="card card-border col-md-4 col-sm-6"
-            key={`${callup._id}`}
+            key={callup._id}
             style={{ padding: 0, border: '1px solid #D3E1E7' }}>
 
             <div className="view index-image-holder">

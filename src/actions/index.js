@@ -113,12 +113,12 @@ export function fetchCallUp(id) {
   }
 }
 
-export function activeCallup(callup) {
-  return {
-    type: ACTIVE_CALLUP,
-    payload: callup
-  }
-}
+// export function activeCallup(callup) {
+//   return {
+//     type: ACTIVE_CALLUP,
+//     payload: callup
+//   }
+// }
 
 export function vote(id, formData, cb) {
   console.log("here!!!")

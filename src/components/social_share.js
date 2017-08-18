@@ -47,13 +47,13 @@ class SocialShare extends Component {
     const title = 'GitHub';
 
     return (
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginLeft: 15 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginLeft: 15 }} id="social_share">
 
         <div style={ styles.shareButtons }>
           <FacebookShareButton
             url={String(window.location)}
             title={"Good people make change. Call 'em up! We wanna help activate, empower and bribe with cookies. You know you're curious & we need help! call-up.herokuapp.com"}
-            className="Demo__some-network__share-button">
+            className="social_share_buttons">
             <FacebookIcon
               size={40}
               round />
@@ -63,8 +63,8 @@ class SocialShare extends Component {
         <div style={ styles.shareButtons }>
           <TwitterShareButton
             url={String(window.location)}
-            title={"Good people make change. Call 'em up! We wanna help activate, empower and bribe with cookies. You know you're curious & we need help! call-up.herokuapp.com"}
-            className="Demo__some-network__share-button">
+            title={`${this.props.callup.who} for ${ this.props.callup.for_what }!! Good people cause change! Help us find em! #callup`}
+            className="social_share_buttons">
             <TwitterIcon
               size={40}
               round />
@@ -75,9 +75,9 @@ class SocialShare extends Component {
         <div style={ styles.shareButtons }>
           <WhatsappShareButton
             url={String(window.location)}
-            title={"Good people make change. Call 'em up! We wanna help activate, empower and bribe with cookies."}
+            title={`${this.props.callup.who} for ${ this.props.callup.for_what }!! Good people cause change! Help us find em! #callup`}
             separator=":: "
-            className="Demo__some-network__share-button">
+            className="social_share_buttons">
             <WhatsappIcon size={40}
               round
             />
@@ -87,7 +87,7 @@ class SocialShare extends Component {
         <div style={ styles.shareButtons }>
           <GooglePlusShareButton
             url={String(window.location)}
-            className="Demo__some-network__share-button">
+            className="social_share_buttons">
             <GooglePlusIcon
               size={40}
               round
@@ -98,10 +98,10 @@ class SocialShare extends Component {
         <div style={ styles.shareButtons }>
           <LinkedinShareButton
             url={String(window.location)}
-            title={"Good people make change. Call 'em up! We wanna help activate, empower and bribe with cookies."}
+            title={`${this.props.callup.who} for ${ this.props.callup.for_what }!! Good people cause change! Help us find em! #callup`}
             windowWidth={750}
             windowHeight={600}
-            className="Demo__some-network__share-button">
+            className="social_share_buttons">
             <LinkedinIcon
               size={40}
               round
@@ -112,10 +112,10 @@ class SocialShare extends Component {
         <div style={ styles.shareButtons }>
           <RedditShareButton
             url={String(window.location)}
-            title={"Good people make change. Call 'em up! We wanna help activate, empower and bribe with cookies."}
+            title={`${this.props.callup.who} for ${ this.props.callup.for_what }!! Good people cause change! Help us find em! #callup`}
             windowWidth={660}
             windowHeight={460}
-            className="Demo__some-network__share-button"
+            className="social_share_buttons"
           >
             <RedditIcon
               size={40}

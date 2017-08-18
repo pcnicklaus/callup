@@ -147,7 +147,7 @@ class CallUpDetail extends Component {
           <div className="col-md-6" key={callup.what}>
             { this.renderCallUp() }
             <div style={{ marginTop: 20 }}>
-              <SocialShare />
+              <SocialShare callup={callup} />
             </div>
             <div className="row" style={{ marginTop: 20, marginBottom: 20 }}>
               <div className="col-md-6 col-xs-6" style={{ marginTop: 10 }}>
