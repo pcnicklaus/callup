@@ -5,7 +5,6 @@ import { Link } from 'react-router';
 import Dotdotdot from 'react-dotdotdot'
 import Masonry from 'react-masonry-component';
 
-import SocialShare from '../components/social_share'
 import * as actions from '../actions/index';
 
 
@@ -60,15 +59,18 @@ class Home extends Component {
                   </span>
                 </h4>
                 <h3 className="card-title" style={{ fontSize: 2.1 + 'em' }}>{ callup.for_what }</h3>
+                <div>
+                  { callup.calluperName == undefined  ? "" : `Called up by ${ callup.calluperName }` }
+                </div>
+
               </div>
               <hr />
               <div style={{ marginBottom: 20 }}>
                 <Dotdotdot clamp={4}>
+
                   <p className="card-text" style={{ paddingBottom: 20, textAlign: 'justify', textJustify: 'inter-word'  }}>{ callup.why }</p>
                 </Dotdotdot>
               </div>
-
-              <SocialShare />
 
               <div className="row" style={{ marginTop: 20, marginBottom: 10 }}>
                 <div className="col-md-2"></div>

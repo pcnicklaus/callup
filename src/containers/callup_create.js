@@ -121,11 +121,9 @@ const styles = {
 
 function validate(values) {
   const errors = {};
-  console.log(values, ",lslks")
+  
   _.map(FORM_FIELDS, (field, value) => {
-    console.log('field\n', field, '\n value \n', value )
     if(!values[value]) {
-      console.log('if(!values[value])', values[value])
       errors[value] = `enter a ${value}`
     }
   })

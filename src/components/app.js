@@ -6,6 +6,11 @@ import Footer from '../containers/blocks/_footer';
 
 
 class App extends Component {
+
+  async componentWillUnmount() {
+    await localStorage.removeItem('token');
+  }
+
   render() {
     return (
       <div>

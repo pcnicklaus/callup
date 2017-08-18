@@ -8,6 +8,10 @@ const FIELDS = {
     type: null,
     label: 'Enter your email addy'
   },
+  name: {
+    type: null,
+    label: 'What\'s your name?'
+  },
   password: {
     type: 'password',
     label: 'enter a password, por favor'
@@ -38,7 +42,7 @@ class Signup extends Component {
   renderField(fieldConfig, field) {
     const fieldHelper = this.props.fields[field];
     return (
-            <fieldset className="form-group">
+            <fieldset className="form-group" key={fieldConfig.label}>
               <label style={{ color: '#fff', fontSize: 1.2 +'em', paddingLeft: 5 }}>{ fieldConfig.label }</label>
 
                 <input type={fieldConfig.type} style={{ width: 94 + '%' }} className="form-control"  {...fieldHelper} />
@@ -52,16 +56,10 @@ class Signup extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <div className="signup" >
-        <div className="container"
-          style={{
-            top: 12 + '%',
-            left: 2 + '%',
-            position: 'absolute',
-          }}
-        >
-          <div className="col-md-3 col-xs-1"></div>
-          <div className="col-md-6 col-xs-10" >
+      <div className="signup">
+        <div className="container">
+
+          <div className="center">
             <form  style={ styles }
               className="signupForm" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}
             >
@@ -93,7 +91,7 @@ const styles = {
   borderRadius: 25,
   background: '#ff442c',
   padding: 30,
-  marginTop: 70,
+  marginTop: 110,
 
   // width: 200,
   // height: 150,

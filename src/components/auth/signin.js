@@ -23,18 +23,9 @@ class Signin extends Component {
 
     return (
       <div className="signin">
-        <div
-          className="container"
-          style={{
-            top: 20 + '%',
-            left: 2 + '%',
-            position: 'absolute',
-          }}>
+        <div className="container">
 
-          <div className="col-md-3 col-xs-1">
-          </div>
-
-          <div className="col-md-6 col-xs-10" style={{ paddingTop: 40 }}>
+          <div className="center">
 
             <form
               style={ styles }
@@ -69,6 +60,7 @@ const styles = {
   borderRadius: 25,
   backgroundColor: '#ff442c',
   padding: 30,
+  marginTop: 140
 }
 
 function mapStateToProps(state) {

@@ -53,7 +53,7 @@ class CallUpDetail extends Component {
     return (
       <div>
         <div>
-          <h4>Why { this.props.callup.who } has been called up</h4>
+          <h4>Why <span style={{ fontSize: 1.1 + 'em', color:'#ff442c' }}>{ this.props.callup.calluperName }</span> called up <span style={{ fontSize: 1.2 + 'em', color:'#ff442c' }}>{ this.props.callup.who }...</span></h4>
           <p >{ this.props.callup.why }</p>
         </div>
       </div>
@@ -146,21 +146,25 @@ class CallUpDetail extends Component {
         <div className="container">
           <div className="col-md-6" key={callup.what}>
             { this.renderCallUp() }
-            <div>
+            <div style={{ marginTop: 20 }}>
               <SocialShare />
             </div>
             <div className="row" style={{ marginTop: 20, marginBottom: 20 }}>
-              <div className="col-xs-12 col-md-12" >
+              <div className="col-md-6 col-xs-6" style={{ marginTop: 10 }}>
                 <button
                   type="button"
                   onClick={ () => this.openModal() }
                   style={{ color: '#fffff', padding: 10, width: 100 + '%', backgroundColor: '#ff442c', border: 'none' }}>
-                  <p style={{ fontSize: 1.2 + 'em', justifyContent: 'center', margin: 0, color: '#fff' }}>Boom (sign) { callup.who }s Call Up</p>
+                  <p style={{ fontSize: 1.2 + 'em', justifyContent: 'center', margin: 0, color: '#fff' }}>Give { callup.who } a <img style={{ maxHeight: 40, marginBottom: 4 }} src="../images/boom-white.png" /></p>
                 </button>
-                <p>
-                { _.keysIn(callup.signatures).length }
-                { console.log(callup.signatures) }
-                </p>
+              </div>
+              <div className="col-md-1 hidden-xs"></div>
+              <div className="col-md-5 col-xs-6" style={{ marginBottom: 10 }}>
+
+                <img style={{ maxHeight: 60, marginBottom: 20, display: 'inline-block' }} src="../images/boom-blue.png" />
+                <p style={{ fontSize: 1.5 + 'em', display: 'inline-block', marginTop: 10,  color: '#004687' }}>count:</p>
+
+                <p style={{ fontSize: 2.5 + 'em', display: 'inline-block', marginTop: 10, color: '#004687', marginLeft: 25 }}>{ _.keysIn(callup.signatures).length } </p>
               </div>
             </div>
           </div>
