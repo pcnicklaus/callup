@@ -6,7 +6,7 @@ import * as actions from '../../actions';
 const FIELDS = {
   email: {
     type: null,
-    label: 'Enter your email addy'
+    label: 'Email goes here'
   },
   name: {
     type: null,
@@ -14,11 +14,11 @@ const FIELDS = {
   },
   password: {
     type: 'password',
-    label: 'enter a password, por favor'
+    label: 'Password, por favor'
   },
   passwordConfirm: {
     type: 'password',
-    label: 'rinse and repeat please! w/o the rinse :)'
+    label: 'Rinse and repeat. w/o the rinse :)'
   }
 }
 
@@ -43,10 +43,10 @@ class Signup extends Component {
     const fieldHelper = this.props.fields[field];
     return (
             <fieldset className="form-group" key={fieldConfig.label}>
-              <label style={{ color: '#fff', fontSize: 1.2 +'em', paddingLeft: 5 }}>{ fieldConfig.label }</label>
+              <label style={{ color: '#fff', fontSize: 1.1 +'em', paddingLeft: 5 }}>{ fieldConfig.label }</label>
 
                 <input type={fieldConfig.type} style={{ width: 94 + '%' }} className="form-control"  {...fieldHelper} />
-                {fieldHelper.touched && fieldHelper.error && <div className="error">{fieldHelper.error}</div>}
+                {fieldHelper.touched && fieldHelper.error && <div className="error" style={{ color: '#fff', fontFamily: 'Nunito', backgroundColor: 'rgba(255,255,255,0.2)', padding: 5, borderRadius: 3, width: 220 }}>Oops... {fieldHelper.error}</div>}
 
             </fieldset>
     )

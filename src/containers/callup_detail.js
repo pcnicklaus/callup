@@ -129,7 +129,7 @@ class CallUpDetail extends Component {
 
         <div className="row">
           <div className="col-md-1"></div>
-          <div className="col-md-10" style={{ textAlign: 'center' }}>
+          <div className="col-md-10" style={{ textAlign: 'center', marginTop: 20 }}>
             <h2 style={{ display: 'inline-block', fontSize: 4 + 'em' }}>{ callup.who } </h2>
             <h4 style={{ display: 'inline-block', fontSize: 2 + 'em', padding: 10 }}>for </h4>
             <h1 style={{ display: 'inline-block', fontSize: 6.5 + 'em' }}>{ callup.for_what }</h1>

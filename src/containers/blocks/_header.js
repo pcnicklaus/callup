@@ -9,7 +9,7 @@ class Header extends Component {
 
   render() {
     return(
-      <nav className="navbar" style={{ backgroundColor: '#004687' }}>
+      <nav className="navbar" style={{ backgroundColor: '#004687', border: 'none' }}>
         <div className="container-fluid" style={{ color: "#fff" }}>
           <div className="navbar-header">
             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style={{ color: '#fff' }}>
@@ -20,11 +20,12 @@ class Header extends Component {
             <Link to="/" className="navbar-brand" style={{ paddingTop: 7 }}><img src="../../images/callup_logo_white.svg" style={{ height: 40 }}/></Link>
           </div>
           <div className="collapse navbar-collapse" id="myNavbar">
-            <ul className="nav navbar-nav navbar-right">
+            <ul className="nav navbar-nav navbar-right" style={{ fontFamily: "Nunito", fontSize: 1.2 + 'em' }}>
 
               <li className="active"><Link to="/">home</Link></li>
-              <li className="active"><Link to="/callup">Call Up</Link></li>
+              <li className="active"><Link to="/callup">call up</Link></li>
               <li className="active"><Link to="/story">the story</Link></li>
+              <li className="active"><Link to="/resources">resources</Link></li>
 
             	<li className="dropdown">
                 <a className="dropdown-toggle" data-toggle="dropdown" href="#">sign<span className="caret"></span></a>

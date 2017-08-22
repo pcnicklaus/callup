@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from '../images/callup-favicon.png';
 
 import Header from '../containers/blocks/_header';
-import Footer from '../containers/blocks/_footer';
 
 
 class App extends Component {
@@ -16,7 +15,6 @@ class App extends Component {
       <div>
         <Header />
         { this.props.children }
-        <Footer />
       </div>
     );
   }

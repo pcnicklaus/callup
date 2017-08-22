@@ -37,14 +37,14 @@ class Story extends Component {
               <div className="col-md-2"></div>
               <div className="col-md-8">
                 <h4 style={{ fontFamily: 'Shadows Into Light', fontSize: 1.5 + 'em' }}>What do you hope to achieve here?</h4>
-                <p>Our main goal is to help people activate other people. We know there are amazing, badass people everywhere and we know the world would be a much better place if we could convince them to represent us. We want to make this easier. In our fantasy dream world, nom.nom.nom helps any and everyone participate, empower, support, manage, volunteer for and fund any person for any position that makes the world better. </p>
+                <p>Our main goal is to help people activate other people. We know there are amazing, badass people everywhere and we know the world would be a much better place if we could convince them to represent us. We want to make this easier. In our fantasy dream world, Call Up helps any and everyone participate, empower, support, manage, volunteer for and fund any person for any position that makes the world better. </p>
               </div>
             </div>
             <div className="row">
               <div className="col-md-2"></div>
               <div className="col-md-8" style={{ paddingBottom: 100 }}>
                 <h4 style={{ fontFamily: 'Shadows Into Light', fontSize: 1.5 + 'em' }}>What can we do to help?</h4>
-                <p>Anything!! Everything!!! Something!! Not Nothing!!! Wait, that work… Am I still typing… :)  But seriously, drop us a line at nom.nom.nom@gmail.com because we could sure use your help!!</p>
+                <p>Anything!! Everything!!! Something!! Not Nothing!!! Wait, that work… Am I still typing… :)  But seriously, drop us a line at call.up.change@gmail.com because we could sure use your help!!</p>
               </div>
             </div>
           </div>

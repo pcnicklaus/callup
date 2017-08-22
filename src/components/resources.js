@@ -21,10 +21,11 @@ class Resources extends Component {
             </a>
           </div>
           <div className="row">
-            <p>
-              ballotpedia is a wicked awesome resource and my number one go to resource for all things elections. This link is to their report titled, "Open seats in the 2017 state legislative elections".
+            <p style={{ fontSize: 1.2 + 'em', textAlign: 'center' }}>
+              ballotpedia is a wicked awesome resource and my number one go to resource for all things elections.
             </p>
           </div>
+
       </div>
     )
   }
@@ -37,7 +38,7 @@ class Resources extends Component {
           <div className="row" style={{ paddingTop: 40, paddingBottom: 30, backgroundColor: '#BBBEBE', lineHeight: 0.85 }}>
             <div className='col-md-2'></div>
             <div className='col-md-8'
-              style={{ marginTop: 90, color: '#f6f6f6', backgroundColor: 'rgba(0, 0, 0, 0.2)', paddingLeft: 10, paddingTop: 10, paddingBottom: 10, borderRadius: 5 }}
+              style={{ marginTop: 90, marginBottom: 50, color: '#f6f6f6', paddingLeft: 10, paddingTop: 10, paddingBottom: 10, borderRadius: 5 }}
               >
               <p style={ styles.h3 }>Resources</p>
             </div>
@@ -91,7 +92,7 @@ const styles = {
     maxHeight: 300,
   },
   h3: {
-    fontSize: 7.9 + "em",
+    fontSize: 9 + "em",
     fontFamily: 'Lobster'
   },
   h4: {

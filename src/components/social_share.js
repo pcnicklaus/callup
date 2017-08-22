@@ -52,7 +52,7 @@ class SocialShare extends Component {
         <div style={ styles.shareButtons }>
           <FacebookShareButton
             url={String(window.location)}
-            title={"Good people make change. Call 'em up! We wanna help activate, empower and bribe with cookies. You know you're curious & we need help! call-up.herokuapp.com"}
+            title={`Good people cause change! ${this.props.callup.who} for ${ this.props.callup.for_what }!! ${this.props.callup.why}. calloutchange.herokuapp.com/${this.props.callup._id}`}
             className="social_share_buttons">
             <FacebookIcon
               size={40}
@@ -75,7 +75,7 @@ class SocialShare extends Component {
         <div style={ styles.shareButtons }>
           <WhatsappShareButton
             url={String(window.location)}
-            title={`${this.props.callup.who} for ${ this.props.callup.for_what }!! Good people cause change! Help us find em! #callup`}
+            title={`${this.props.callup.who} for ${ this.props.callup.for_what }!! Good people cause change! Help us find em! callupchange.herokuapp.com`}
             separator=":: "
             className="social_share_buttons">
             <WhatsappIcon size={40}
@@ -98,7 +98,7 @@ class SocialShare extends Component {
         <div style={ styles.shareButtons }>
           <LinkedinShareButton
             url={String(window.location)}
-            title={`${this.props.callup.who} for ${ this.props.callup.for_what }!! Good people cause change! Help us find em! #callup`}
+            title={`Good people cause change! ${this.props.callup.who} for ${ this.props.callup.for_what }!! ${this.props.callup.why}. calloutchange.herokuapp.com/${this.props.callup._id}`}
             windowWidth={750}
             windowHeight={600}
             className="social_share_buttons">
@@ -112,7 +112,7 @@ class SocialShare extends Component {
         <div style={ styles.shareButtons }>
           <RedditShareButton
             url={String(window.location)}
-            title={`${this.props.callup.who} for ${ this.props.callup.for_what }!! Good people cause change! Help us find em! #callup`}
+            title={`Good people cause change! ${this.props.callup.who} for ${ this.props.callup.for_what }!! ${this.props.callup.why}. calloutchange.herokuapp.com/${this.props.callup._id}`}
             windowWidth={660}
             windowHeight={460}
             className="social_share_buttons"
