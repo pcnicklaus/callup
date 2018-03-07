@@ -9,6 +9,7 @@
 }
 
 
+
 .callup__container {
   padding: 5rem 0 10rem 0;
 }
@@ -36,6 +37,11 @@
 }
 .card__forWhat {
   color: var(--main-pink);
+}
+
+.card__body {
+  background-color: #f7f7f7;
+  padding: 0 1rem 1rem 1rem;
 }
 
 .peeps {
