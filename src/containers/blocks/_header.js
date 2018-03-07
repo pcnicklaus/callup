@@ -4,35 +4,48 @@ import { Link } from 'react-router';
 // import { Navbar, Nav, NavItem, Route } from 'react-bootstrap';
 // import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap';
 
+import './_header.css';
+
 
 class Header extends Component {
 
   render() {
     return(
-      <nav className="navbar" style={{ backgroundColor: '#004687', border: 'none' }}>
-        <div className="container-fluid" style={{ color: "#fff" }}>
+      <nav className="navbar">
+        <div className="container-fluid">
           <div className="navbar-header">
-            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style={{ color: '#fff' }}>
+            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link to="/" className="navbar-brand" style={{ paddingTop: 7 }}><img src="../../images/callup_logo_white.svg" style={{ height: 40 }}/></Link>
+            <Link to="/" className="navbar-brand">
+              <img src="../../images/callup_logo_white.svg" style={{ height: 35 }}/>
+
+            </Link>
           </div>
           <div className="collapse navbar-collapse" id="myNavbar">
-            <ul className="nav navbar-nav navbar-right" style={{ fontFamily: "Nunito", fontSize: 1.2 + 'em' }}>
+            <ul className="nav navbar-nav navbar-right">
 
-              <li className="active"><Link to="/">home</Link></li>
-              <li className="active"><Link to="/callup">call up</Link></li>
-              <li className="active"><Link to="/story">the story</Link></li>
-              <li className="active"><Link to="/resources">resources</Link></li>
+              <li className="nav__link">
+                <Link to="/">home</Link>
+                </li>
+              <li>
+                <Link className="nav__link" to="/callup">call up</Link>
+              </li>
+              <li>
+                <Link className="nav__link" to="/story">the story</Link>
+              </li>
+              <li>
+                <Link className="nav__link" to="/resources">resources</Link>
+              </li>
 
             	<li className="dropdown">
-                <a className="dropdown-toggle" data-toggle="dropdown" href="#">sign<span className="caret"></span></a>
-                <ul className="dropdown-menu">
-                  <li><Link to="/signup"><span className="glyphicon glyphicon-user"></span> up</Link></li>
-                  <li><Link to="/signin"><span className="glyphicon glyphicon-log-in"></span> in</Link></li>
-                  <li><Link to="/signout"><span className="glyphicon glyphicon-log-out"></span> out</Link></li>
+                <a className="dropdown-toggle nav__link" data-toggle="dropdown" href="#">sign<span className="caret"></span></a>
+                <ul className="dropdown-menu auth_dropdown">
+                  <li><Link className="nav__link" to="/signup">up</Link></li>
+                  <li><Link className="nav__link" to="/signin">in</Link></li>
+                  <li><Link className="nav__link" to="/signout">out</Link></li>
                 </ul>
               </li>
             </ul>
@@ -44,3 +57,7 @@ class Header extends Component {
 
 }
 export default Header;
+
+// <svg fill="red">
+//     <image xlinkHref="../../images/call_up_slogan_white.svg" height="100" width="100" fill="red" />
+// </svg>

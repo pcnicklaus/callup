@@ -74,7 +74,7 @@ class CallUp extends Component {
             <div style={{ textAlign: 'center' ,backgroundColor: '#ff442c', maxWidth: 1000, marginLeft: 'auto', marginRight: 'auto', marginTop: 50, marginBottom: 50, padding: 50, color: '#fff', borderRadius: 25, }}>
               <h3 style={ styles.title }>CALL UP SOMEONE!</h3>
               <h3 style={{ fontFamily: 'Lobster', fontSize: 4.25 + 'em' }}>Good people cause change</h3>
-              <h3 style={{ fontFamily: 'Droid Sans', fontSize: 5 + 'em' }}>Help us find them</h3>
+              <h3 style={{ fontSize: 5 + 'em' }}>Help us find them</h3>
             </div>
           </div>
 
@@ -92,7 +92,7 @@ class CallUp extends Component {
                   </div>
                 </div>
                 <div className="col-md-11" style={{ marginTop: 10, marginBottom: 20 }}>
-                <button action="submit" className="btn pull-right" style={{ backgroundColor: '#004687', color: '#fff', fontFamily: 'Comfortaa', fontSize: 1.2 + 'em' }}>Call Up</button>
+                <button action="submit" className="btn pull-right" style={{ backgroundColor: '#004687', color: '#fff' }}>Call Up</button>
                 </div>
               </div>
             </form>
@@ -111,7 +111,6 @@ const styles = {
   },
 
   form: {
-    fontFamily: 'QuickSand',
     fontSize: 1.2 + 'em',
     fontWeight: 'bold',
   }
@@ -121,7 +120,7 @@ const styles = {
 
 function validate(values) {
   const errors = {};
-  
+
   _.map(FORM_FIELDS, (field, value) => {
     if(!values[value]) {
       errors[value] = `enter a ${value}`

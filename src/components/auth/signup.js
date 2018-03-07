@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import * as actions from '../../actions';
 
+import './auth.css';
+
 const FIELDS = {
   email: {
     type: null,
@@ -18,7 +20,7 @@ const FIELDS = {
   },
   passwordConfirm: {
     type: 'password',
-    label: 'Rinse and repeat. w/o the rinse :)'
+    label: 'Rinse and repeat. w/o the rinse'
   }
 }
 
@@ -42,11 +44,27 @@ class Signup extends Component {
   renderField(fieldConfig, field) {
     const fieldHelper = this.props.fields[field];
     return (
-            <fieldset className="form-group" key={fieldConfig.label}>
-              <label style={{ color: '#fff', fontSize: 1.1 +'em', paddingLeft: 5 }}>{ fieldConfig.label }</label>
+            <fieldset
+              className="form-group"
+              key={fieldConfig.label}
+            >
+              <label
+                style={{ color: '#fff', paddingLeft: 5 }}
+              >
+                { fieldConfig.label }
+              </label>
 
-                <input type={fieldConfig.type} style={{ width: 94 + '%' }} className="form-control"  {...fieldHelper} />
-                {fieldHelper.touched && fieldHelper.error && <div className="error" style={{ color: '#fff', fontFamily: 'Nunito', backgroundColor: 'rgba(255,255,255,0.2)', padding: 5, borderRadius: 3, width: 220 }}>Oops... {fieldHelper.error}</div>}
+              <input 
+                type={fieldConfig.type}
+                style={{ width: 94 + '%' }}
+                className="form-control"
+                {...fieldHelper}
+              />
+                { fieldHelper.touched &&
+                  fieldHelper.error &&
+                  <div className="auth__error" >
+                    Oops... {fieldHelper.error}
+                  </div>}
 
             </fieldset>
     )
@@ -56,22 +74,25 @@ class Signup extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <div className="signup">
+      <div className="auth__container">
         <div className="container">
 
           <div className="center">
-            <form  style={ styles }
+            <form
               className="signupForm" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}
             >
-            <object
-              className="center-block"
-              type="image/svg+xml" data="images/callup_logo_white.svg"
-              width="40%"
+              <object
+                className="center-block"
+                type="image/svg+xml" data="images/callup_logo_white.svg"
+                width="40%"
               ></object>
 
               { _.map(FIELDS, this.renderField.bind(this)) }
+
               {this.renderAlert()}
-              <button action="submit" className="btn" style={{ backgroundColor: '#004687', color: '#fff', fontFamily: 'Comfortaa', fontSize: 1.2 + 'em' }}>Sign up!</button>
+
+              <button action="submit" className="btn auth__submitButton">Sign up!</button>
+
             </form>
           </div>
         </div>

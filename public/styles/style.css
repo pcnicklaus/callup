@@ -1,35 +1,60 @@
-/*remove corners of default navbar AND margin bottom*/
-.navbar {
-  border-radius: 0;
-  margin-bottom: 0;
+
+:root {
+  /* COLORS */
+  --main-onyx: #333745;
+  /* rgb(51, 55, 69) */
+  --main-pink: #E63462;
+  /* rgba(230, 52, 98, .15) */
+  --main-orange: #FE5F55;
+  /* rgba(254, 95, 85)/ */
+  --main-light-green: #C7EFCF;
+  /* rgba(199, 239, 207) */
+  --main-beige: #EEF5DB;
+  /* rgba(238, 245, 219) */
+
+  /* FONTS */
+  /* Dosis:200,400,800|Indie+Flower|Lobster|Pacifico|Ubuntu:300,400,500,700 */
+
+  --font-main: "Dosis";
+  --font-main-two: "Ubuntu";
+  --font-two: "Pacifico";
+  --font-script: "Lobster";
+  --font-handwritten: "Indie Flower";
+
+  --box-shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+  --box-shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+
 }
-/*turn 3 bar navbar icon for toggling to WHITE*/
-.navbar-toggle .icon-bar {
-  background-color: #fff;
+
+* {
+    margin: 0;
+    padding: 0;
 }
-/*change all links to white on navbar*/
-#myNavbar > ul > li > a {
-  color: #fff;
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
-/*change focus and hover colors for navbar*/
-.nav > li > a:focus,
-.nav > li > a:hover {
-  background-color: rgba(230, 228, 228, 0.5);
-  background-image: none;
-  color: #fff;
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+    @media only screen and (max-width: 1000px) {
+        font-size: 50%;
+    }
+}
+
+body {
+  font-family: var(--font-main), Helvetica, sans-serif;
+  font-weight: 500;
 }
 
 
 /*  home page / call up index  */
 /*  -------------------------  */
 /*over ride card spacing*/
-.card-text, .card-data, .card-title {
-  margin: 0px !important;
-}
 
-.card-title {
-  display: inline-block;
-}
 
 #story .text-help,
 #story .error {
@@ -39,8 +64,7 @@
 
 .center {
     margin: auto;
-    width: 50%;
-    padding: 10px;
+    width: 50rem;
 }
 
 .SocialMediaShareButton:hover,
@@ -50,4 +74,27 @@
 
 #social_share > div:focus {
   outline: none !important;
+}
+
+
+/* loader */
+.loader:empty {
+  position: absolute;
+  top: calc(50% - 4em);
+  left: calc(50% - 4em);
+  width: 8em;
+  height: 8em;
+  border: 1.5em solid blue;
+  border-left: 1.5em solid red;
+  border-radius: 50%;
+  animation: load8 1.1s infinite linear;
+}
+
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

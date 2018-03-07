@@ -1,0 +1,49 @@
+.nav__link:hover a, .nav__link:active a {
+  background-color: none;
+  border-bottom: 1px solid var(--main-pink);
+}
+.nav__link {
+  /* font-size: 4rem; */
+}
+
+/*remove corners of default navbar AND margin bottom*/
+.navbar {
+  border-radius: 0;
+  margin-bottom: 0;
+  border: none;
+}
+.navbar, .navbar-collapse, .navbar-brand {
+  max-height: 40px !important;
+  min-height: 40px !important;
+}
+
+.navbar-brand {
+  padding: 5px 15px;
+  height: 40px;
+}
+/*turn 3 bar navbar icon for toggling to WHITE*/
+.navbar-toggle .icon-bar {
+  /* background-color: #fff; */
+}
+/*change all links to white on navbar*/
+#myNavbar > ul > li > a {
+  /* color: #fff; */
+}
+.nav > li > a,
+.nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+/*change focus and hover colors for navbar*/
+.nav > li > a:focus,
+.nav > li > a:hover {
+  padding-top: 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--main-pink);
+  background-color: transparent;
+  color: var(--main-pink);
+
+  /* background-color: rgba(230, 52, 98, .05); */
+  /* background-image: none;
+  color: #fff; */
+}

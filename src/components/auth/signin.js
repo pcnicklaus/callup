@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import * as actions from '../../actions';
 
+import './auth.css';
+
 class Signin extends Component {
   handleFormSubmit({ email, password }) {
     // Need to do something to log user in
@@ -22,13 +24,12 @@ class Signin extends Component {
     const { handleSubmit, fields: { email, password }} = this.props;
 
     return (
-      <div className="signin">
+      <div className="auth__container">
         <div className="container">
 
           <div className="center">
 
             <form
-              style={ styles }
               className="signinForm" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}
             >
               <object
@@ -37,16 +38,28 @@ class Signin extends Component {
                 width="40%"
                 ></object>
               <fieldset className="form-group">
-                  <label style={{ color: '#fff', fontSize: 1.2 +'em', marginLeft: 5 }}>Email:</label>
-                  <input {...email} className="form-control" style={{ width: 94 + '%' }} />
-              </fieldset>
-              <fieldset className="form-group">
-                  <label style={{ color: '#fff', fontSize: 1.2 +'em', marginLeft: 5,  }}>Password:</label>
+                  <label
+                    style={{ color: '#fff', fontSize: 1.2 +'em', marginLeft: 5 }}
+                  >
+                    Email:
+                  </label>
+                  <input
+                    {...email}
+                    className="form-control"
+                    style={{ width: 94 + '%' }}
+                  />
+                </fieldset>
+                <fieldset className="form-group">
+                  <label
+                    style={{ color: '#fff', fontSize: 1.2 +'em', marginLeft: 5,  }}
+                  >Password:</label>
 
                   <input {...password} type="password" className="form-control" style={{ width: 94 + '%'}} />
-              </fieldset>
+                </fieldset>
+
               {this.renderAlert()}
-              <button action="submit" className="btn" style={{ backgroundColor: '#004687', color: '#fff', fontFamily: 'Comfortaa', fontSize: 1.2 + 'em' }}>Sign in</button>
+
+              <button action="submit" className="btn auth__submitButton">Sign in</button>
             </form>
 
           </div>
@@ -71,3 +84,35 @@ export default reduxForm({
   form: 'signin',
   fields: ['email', 'password']
 }, mapStateToProps, actions)(Signin);
+
+
+// <div className="signin">
+//   <div className="container">
+//
+//     <div className="center">
+//
+//       <form
+//         style={ styles }
+//         className="signinForm" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}
+//       >
+//         <object
+//           className="center-block"
+//           type="image/svg+xml" data="../images/callup_logo_white.svg"
+//           width="40%"
+//           ></object>
+//         <fieldset className="form-group">
+//             <label style={{ color: '#fff', fontSize: 1.2 +'em', marginLeft: 5 }}>Email:</label>
+//             <input {...email} className="form-control" style={{ width: 94 + '%' }} />
+//         </fieldset>
+//         <fieldset className="form-group">
+//             <label style={{ color: '#fff', fontSize: 1.2 +'em', marginLeft: 5,  }}>Password:</label>
+//
+//             <input {...password} type="password" className="form-control" style={{ width: 94 + '%'}} />
+//         </fieldset>
+//         {this.renderAlert()}
+//         <button action="submit" className="btn" style={{ backgroundColor: '#004687', color: '#fff', }}>Sign in</button>
+//       </form>
+//
+//     </div>
+//   </div>
+// </div>

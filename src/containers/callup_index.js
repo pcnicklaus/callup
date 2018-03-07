@@ -5,6 +5,12 @@ import { Link } from 'react-router';
 import Dotdotdot from 'react-dotdotdot'
 import Masonry from 'react-masonry-component';
 
+import MainContent from './blocks/_main_content';
+import Mission from './blocks/_mission';
+import How from './blocks/_how';
+
+import './callup_index.css';
+
 import * as actions from '../actions/index';
 
 
@@ -14,11 +20,16 @@ class Home extends Component {
     value: '',
     name: '',
     email: '',
-    address: ''
+    address: '',
+    loading: true
   }
 
-  componentWillMount() {
-    this.props.fetchCallUps();
+  async componentWillMount() {
+    await this.props.fetchCallUps();
+  }
+
+  componentDidMount() {
+    this.state.loading = false;
   }
 
   onInputChange = (event) => {
@@ -35,7 +46,7 @@ class Home extends Component {
   }
 
   renderCallUps() {
-    if(!this.props.callups) { return <div></div> }
+    if(!this.props.callups) { return null; }
 
     return (
 
@@ -44,91 +55,85 @@ class Home extends Component {
           <div
             className="card card-border col-md-4 col-sm-6"
             key={callup._id}
-            style={{ padding: 0, border: '1px solid #D3E1E7' }}>
+          >
 
-            <div className="view index-image-holder">
-              <img src={ callup.imageURL } className="img img-responsive" alt="" />
+            <div className="card__image__holder">
+              <img src={ callup.imageURL } className="img test" alt="" />
             </div>
 
-            <div style={{ background: '#B0BEC0', color: '#274E53', padding: 30 }}>
-              <div>
-                <h4 className="card-title" style={{ fontSize: 1.6 + 'em' }}>
+            <div className="card__body">
+              <div className="card__header">
+                <h4 className="card-title">
                   { callup.who }
-                  <span style={{ marginLeft: 7, marginRight: 7 }}>
+                  <span>
                     for
                   </span>
                 </h4>
-                <h3 className="card-title" style={{ fontSize: 2.1 + 'em' }}>{ callup.for_what }</h3>
+                <h3 className="card-title card__forWhat">{ callup.for_what }</h3>
                 <div>
-                  { callup.calluperName == undefined  ? "" : `Called up by ${ callup.calluperName }` }
+                  { callup.calluperName == undefined ? "" : `Called up by ${ callup.calluperName }` }
                 </div>
-
               </div>
-              <hr />
-              <div style={{ marginBottom: 20 }}>
+
+              <div>
                 <Dotdotdot clamp={4}>
 
-                  <p className="card-text" style={{ paddingBottom: 20, textAlign: 'justify', textJustify: 'inter-word'  }}>{ callup.why }</p>
+                  <p className="card-text">{ callup.why }</p>
                 </Dotdotdot>
               </div>
 
-              <div className="row" style={{ marginTop: 20, marginBottom: 10 }}>
-                <div className="col-md-2"></div>
-                <div className="col-xs-12 col-md-8 index-button-div">
-                  <Link href={`/callup/${callup._id}`}>
-                    <button
-
-                      style={{
-                        width: 100 + '%',
-                        backgroundColor: '#ff442c',
-                        color: '#fff',
-                        padding: 10,
-                        border: 'none'
-                       }}
-                    >
-                    Learn more about { callup.who }
-                    </button>
-                  </Link>
-                </div>
+              <div className="">
+                <Link href={`/callup/${callup._id}`}>
+                  <button> Learn more about { callup.who } </button>
+                </Link>
               </div>
             </div>
 
           </div>
-
         );
       })
     );
   }
 
-  // Dosis|Droid+Sans|Lobster|Nunito|PT+Sans+Narrow|Quicksand|Shadows+Into+Light|Varela+Round
-
-
   masonryOptions = {
     transitionDuration: 1000
   }
+
   render() {
 
+    if(this.state.loading) {
+      return null;
+    }
     const childElements = this.renderCallUps()
 
     return(
-      <div style={{ padding: 20, marginBottom: 60 }}>
-        <div className="row" id="callup_index_content" style={{ paddingLeft: 30, paddingRight: 30, marginBottom: 10 }}>
+      <div className="main">
 
-          <div style={{ marginTop: 40, marginBottom: 40 }}>
-            <div style={{ backgroundColor: '#ff442c', margin: 'auto', padding: 50, borderRadius: 25 }}>
-              <img
-                className="img img-responsive"
-                src="./images/call_up_slogan_white.svg"
-                style={{ margin: 'auto' }}/>
+        <MainContent />
+        <Mission />
+        <How />
+
+        <div className="peeps" >
+
+          <div className="mission__header peeps__header">
+            <div className="mission__title ">
+              <h2 className="mission__title__verbiage">Our Peeps</h2>
+            </div>
+            <div className="mission__quote">
+              <h6 className="mission__quote__verbiage">It always seems impossible until it is done.</h6>
+              <h5 className="mission__quote__author">Nelson Mandela</h5>
             </div>
           </div>
 
-          <div className="row">
+
+          <div className="callup__container">
             <Masonry
                elementType={'div'}
                options={this.masonryOptions}
                disableImagesLoaded={false}
-               updateOnEachImageLoad={false}>
+               updateOnEachImageLoad={false}
+               style={{ display: 'flex' }}
+               >
                {childElements}
             </Masonry>
           </div>
@@ -162,3 +167,86 @@ export default connect(mapStateToProps, actions)(Home)
 //       <input key="two" type='submit' class="form-control" value="Search" disabled />
 //   </form>
 // </Menu>
+
+// <div
+//   className="card card-border col-md-4 col-sm-6"
+//   key={callup._id}
+// >
+//
+//   <div className="view index-image-holder">
+//     <img src={ callup.imageURL } className="img img-responsive" alt="" />
+//   </div>
+//
+//   <div>
+//     <div>
+//       <h4 className="card-title">
+//         { callup.who }
+//         <span>
+//           for
+//         </span>
+//       </h4>
+//       <h3 className="card-title">{ callup.for_what }</h3>
+//       <div>
+//         { callup.calluperName == undefined ? "" : `Called up by ${ callup.calluperName }` }
+//       </div>
+//
+//     </div>
+//     <hr />
+//     <div>
+//       <Dotdotdot clamp={4}>
+//
+//         <p className="card-text">{ callup.why }</p>
+//       </Dotdotdot>
+//     </div>
+//
+//     <div className="row">
+//       <div className="col-md-2"></div>
+//       <div className="col-xs-12 col-md-8 index-button-div">
+//         <Link href={`/callup/${callup._id}`}>
+//           <button> Learn more about { callup.who } </button>
+//         </Link>
+//       </div>
+//     </div>
+//   </div>
+//
+// </div>
+//
+// <div
+//   className="callup card"
+//   key={callup._id}
+// >
+//
+//   <div className="callup__image">
+//     <img src={ callup.imageURL } className="" alt="" />
+//   </div>
+//
+//   <div className="callup__content">
+//     <div className="callup__content__title">
+//       <h4 className="callup__content__title__name">
+//         { callup.who }
+//         <span className="callup__content__title__for">
+//           for
+//         </span>
+//       </h4>
+//       <h3 className="callup__content__title__what">{ callup.for_what }</h3>
+//       <div className="callup__content__title__who">
+//         { callup.calluperName == undefined ? "" : `Called up by ${ callup.calluperName }` }
+//       </div>
+//     </div>
+//
+//     <hr />
+//
+//     <div className="callup__content__body">
+//       <Dotdotdot clamp={4}>
+//         <p className="callup__content__body__verbiage">{ callup.why }</p>
+//       </Dotdotdot>
+//     </div>
+//
+//     <div className="callup__content__footer">
+//       <Link href={`/callup/${callup._id}`}>
+//         <button> Learn more about { callup.who } </button>
+//       </Link>
+//     </div>
+//   </div>
+//
+// </div>

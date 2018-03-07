@@ -1,0 +1,73 @@
+.how {
+  background-image: linear-gradient( to bottom right, rgba(238, 245, 219, .7), rgba(238, 245, 219, .7));
+  padding-top: 5rem;
+}
+
+.how__body {
+  display: flex;
+  justify-content: space-between;
+  height: 50rem;
+  padding: 5rem 10rem 10rem 10rem;
+}
+
+.how__one, .how__two, .how__three {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 30%;
+  justify-content: center;
+  align-items: center;
+  height: 35rem;
+  background-color: #fff;
+  color: #fff;
+  overflow: hidden;
+}
+
+.how__one__content {
+  background-color: var(--main-pink);
+}
+.how__icon__find {
+  fill: var(--main-pink);
+}
+.how__two__content {
+  background-color: var(--main-light-green);
+}
+.how__icon__support {
+  fill: var(--main-light-green);
+}
+.how__three__content {
+  background-color: var(--main-orange);
+}
+.how__icon__empower {
+  fill: var(--main-orange);
+}
+
+.how__one__content, .how__two__content, .how__three__content {
+  min-height: 15rem;
+  padding: 3rem;
+  width: 100%;
+}
+
+.how__icon__find svg path {
+  fill: red !important;
+    /* height: 15rem; */
+}
+.how__empower__icon {
+
+}
+.how__support__icon {
+
+}
+
+.how__image {
+    margin: 5rem 0 -1rem 0;
+}
+.how__content {
+}
+.how__one__content__title {
+  font-size: 1.2;
+  font-weight: 700;
+}
+
+.how__image {
+
+}

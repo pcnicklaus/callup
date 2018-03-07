@@ -1,0 +1,88 @@
+
+.test {
+  max-width: 45rem;
+
+  background-position: center;
+  /* Make the background image cover the area of the <div>, and clip the excess */
+  background-size: cover;
+  z-index: 10;
+}
+
+
+.callup__container {
+
+}
+.card__image__holder {
+  height: 40rem;
+  width: 45rem;
+  overflow: hidden;
+  z-index: 15;
+}
+
+.card-text, .card-data, .card-title {
+  margin: 0px !important;
+}
+
+.card-title {
+  display: inline-block;
+}
+
+.card-title > span {
+  margin: 0 .5rem;
+}
+
+.card__header {
+  padding: 1rem 0;
+}
+.card__forWhat {
+  color: var(--main-pink);
+}
+
+.peeps {
+  padding: 5rem 0;
+}
+
+.peeps__header {
+  padding-bottom: 5rem;
+}
+
+/* .callup {
+  display: flex;
+  height: ;
+  flex: 0 0 30%;
+  flex-direction: column;
+}
+.callup__image {
+
+}
+.callup__content {
+
+}
+.callup__content__title {
+
+}
+.callup__content__title__name {
+
+}
+.callup__content__title__for {
+
+}
+.callup__content__title__what {
+
+}
+.callup__content__title__who {
+
+}
+
+.callup__content__body {
+
+}
+.callup__content__body__verbiage {
+
+}
+.callup__content__footer {
+
+}
+.callup__content__footer__button {
+
+} */
