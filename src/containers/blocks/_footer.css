@@ -2,8 +2,7 @@
   display: flex;
   justify-content: space-between;
   background-color: var(--main-onyx);
-  padding: 5rem 10rem;
-  margin-top: 5rem;
+  padding: 3rem 5rem;
   color: #fff;
 }
 

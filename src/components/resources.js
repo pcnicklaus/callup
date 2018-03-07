@@ -35,16 +35,14 @@ class Resources extends Component {
       <div style={{ marginBottom: 100 }}>
         <div className="container-fluid" id="resources" style={{ marginBotton: 50 }}>
 
-          <div className="row" style={{ paddingTop: 40, paddingBottom: 30, backgroundColor: '#BBBEBE', lineHeight: 0.85 }}>
-            <div className='col-md-2'></div>
-            <div className='col-md-8'
-              style={{ marginTop: 90, marginBottom: 50, color: '#f6f6f6', paddingLeft: 10, paddingTop: 10, paddingBottom: 10, borderRadius: 5 }}
-              >
-              <p style={ styles.h3 }>Resources</p>
+          <div className="row">
+            <div className="col-md-1"></div>
+            <div style={{ textAlign: 'center' ,backgroundColor: '#ff442c', maxWidth: 1000, marginLeft: 'auto', marginRight: 'auto', marginTop: 50, marginBottom: 25, padding: 100, color: '#fff', borderRadius: 25, }}>
+              <h3 style={{ fontFamily: 'Lobster', fontSize: 4.25 + 'em' }}>Resources</h3>
             </div>
           </div>
 
-          <div className="row" style={{ paddingTop: 40, paddingBottom: 60, backgroundColor: '#fff', color: '#000000', fontSize: 1.2 + 'em' }}>
+          <div className="row" style={{ paddingBottom: 60, backgroundColor: '#fff', color: '#000000', fontSize: 1.2 + 'em' }}>
 
             <div className="col-md-2"></div>
 
@@ -53,7 +51,7 @@ class Resources extends Component {
 
               <p>...to create an app that not only makes it easy to activate and empower people, but also makes it really easy for them to participate in a local and national level. This is going to involve several different steps:
               </p>
-              <ol>
+              <ol style={{ paddingLeft: 5 + 'rem', paddingRight: 5 + 'rem'}}>
                 <li>Identifying and creating a bot/scraper or something that will go out and grab all the info about the open / uncontested elections throughout the country</li>
                 <li>Putting this info on our site in an easy, searchable way</li>
               </ol>
@@ -111,6 +109,15 @@ const styles = {
 
 
 export default Resources;
+
+// <div className="row" style={{ paddingTop: 40, paddingBottom: 30, backgroundColor: 'orange', lineHeight: 0.85 }}>
+//   <div className='col-md-2'></div>
+//   <div className='col-md-8'
+//     style={{ marginTop: 90, marginBottom: 50, color: '#f6f6f6', paddingLeft: 10, paddingTop: 10, paddingBottom: 10, borderRadius: 5 }}
+//     >
+//     <p style={ styles.h3 }>Resources</p>
+//   </div>
+// </div>
 
 
 // <div>

@@ -20,7 +20,7 @@ class Header extends Component {
               <span className="icon-bar"></span>
             </button>
             <Link to="/" className="navbar-brand">
-              <img src="../../images/callup_logo_white.svg" style={{ height: 35 }}/>
+              <img src="../../images/callup_logo_white.svg" style={{ height: 35, color: 'pink' }} />
 
             </Link>
           </div>

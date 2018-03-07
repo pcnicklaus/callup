@@ -7,14 +7,17 @@
   background-color: var(--main-orange);
   padding: 3rem;
   border-radius: 2.5rem;
-  margin-top: 3rem;
+  margin-top: 5rem;
   box-shadow: var(--box-shadow-dark);
   width: 100%;
 
 }
 
 .signinForm {
-  margin: 10rem 0;
+  margin: 15rem 0;
+}
+.signupForm {
+  margin: 8rem 0;
 }
 
 .auth_dropdown {
