@@ -13,6 +13,7 @@ class Header extends Component {
     return(
       <nav className="navbar">
         <div className="container-fluid">
+          <div className="collapse navbar-collapse" id="myNavbar">
           <div className="navbar-header">
             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
               <span className="icon-bar"></span>
@@ -20,11 +21,25 @@ class Header extends Component {
               <span className="icon-bar"></span>
             </button>
             <Link to="/" className="navbar-brand">
-              <img src="../../images/callup_logo_white.svg" style={{ height: 35, color: 'pink' }} />
+              <div className="navbar__logo">
+                <h5 style={{
+                    fontFamily: "Alfa Slab One",
+                    fontSize: 2 + 'rem'
+                }}>
+                  Call
+                  <span style={{
+                      display: "inline-block",
+                      fontFamily: "Poiret One",
+                      fontSize: 2 + 'rem',
+                      marginLeft: 2
+                  }}>
+                    Up
+                  </span>
+                </h5>
+              </div>
 
             </Link>
           </div>
-          <div className="collapse navbar-collapse" id="myNavbar">
             <ul className="nav navbar-nav navbar-right">
 
               <li className="nav__link">

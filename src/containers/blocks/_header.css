@@ -19,9 +19,37 @@
 }
 
 .navbar-brand {
-  padding: 5px 15px;
+  /* padding: 5px 15px; */
+  /* padding: 0;
+  margin: 0 0 0 15px; */
+  margin: 0;
+  padding: 0;
   height: 40px;
 }
+.navbar__logo {
+  /* padding: 5px 15px; */
+  /* padding: 0;
+  margin: 0 0 0 15px; */
+  color: var(--main-blue)
+}
+.navbar__logo:focus,
+.navbar__logo:hover {
+  color: var(--main-pink);
+
+  /* background-color: rgba(230, 52, 98, .05); */
+  /* background-image: none;
+  color: #fff; */
+}
+
+/* .navbar__logo {
+  font-family: "Alfa Slab One";
+  line-height: 1;
+}
+
+.navbar__logo > h5 > span {
+  font-family: "Poiret One";
+  font-size: 1.3rem !important;
+} */
 /*turn 3 bar navbar icon for toggling to WHITE*/
 .navbar-toggle .icon-bar {
   /* background-color: #fff; */
@@ -32,6 +60,7 @@
 }
 .nav > li > a,
 .nav > li > a {
+  color: var(--main-blue);
   padding-top: 10px;
   padding-bottom: 5px;
 }
@@ -42,6 +71,7 @@
   padding-bottom: 4px;
   border-bottom: 1px solid var(--main-pink);
   background-color: transparent;
+  color: var(--main-blue);
   color: var(--main-pink);
 
   /* background-color: rgba(230, 52, 98, .05); */

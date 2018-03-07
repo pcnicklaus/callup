@@ -1,13 +1,13 @@
 .how {
-  background-image: linear-gradient( to bottom right, rgba(238, 245, 219, .7), rgba(238, 245, 219, .7));
-  padding-top: 5rem;
+  background-image: linear-gradient( to bottom right, rgba(199, 239, 207,.7), rgba(199, 239, 207,.7));
+  padding: 7rem 0;
 }
 
 .how__body {
   display: flex;
   justify-content: space-between;
   height: 50rem;
-  padding: 5rem 10rem 10rem 10rem;
+  padding: 8rem 10rem 10rem 10rem;
 }
 
 .how__one, .how__two, .how__three {
@@ -29,16 +29,16 @@
   fill: var(--main-pink);
 }
 .how__two__content {
-  background-color: var(--main-light-green);
+  background-color: var(--main-blue);
 }
 .how__icon__support {
-  fill: var(--main-light-green);
+  fill: var(--main-blue);
 }
 .how__three__content {
-  background-color: var(--main-orange);
+  background-color: var(--main-orange-two);
 }
 .how__icon__empower {
-  fill: var(--main-orange);
+  fill: var(--main-orange-two);
 }
 
 .how__one__content, .how__two__content, .how__three__content {

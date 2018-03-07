@@ -10,7 +10,7 @@
 
 
 .callup__container {
-
+  padding: 5rem 0 10rem 0;
 }
 .card__image__holder {
   height: 40rem;
@@ -39,11 +39,28 @@
 }
 
 .peeps {
-  padding: 5rem 0;
+  padding: 7rem 0 5rem 0;
 }
 
 .peeps__header {
   padding-bottom: 5rem;
+}
+
+.button__container {
+  text-align: center;
+}
+.button__learn__more {
+  /* width: 100%; */
+  background-color: transparent;
+  color: var(--main-pink);
+  border: none;
+  border-bottom: 1px solid var(--main-pink);
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.button__learn__more:hover, .button__learn__more:active {
+  color: var(--main-blue);
+  border-bottom: 1px solid var(--main-blue);
 }
 
 /* .callup {

@@ -1,8 +1,8 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  background-color: var(--main-onyx);
-  padding: 3rem 5rem;
+  background-color: var(--main-blue);
+  padding: 3rem 3rem;
   color: #fff;
 }
 
@@ -37,7 +37,9 @@
 
 }
 .footer__slug__verbiage {
-
+    font-size: 2rem;
+    /* font-family: "Alfa Slab One"; */
+    letter-spacing: 1px;
 }
 
 .footer__copyright {

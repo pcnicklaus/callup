@@ -1,6 +1,6 @@
 .mission {
   min-height: 50vh;
-  padding: 5rem 10rem;
+  padding: 7rem 10rem;
   font-family: var(--font-main);
 
   /* background-color: var(--main-light-green); */
@@ -55,6 +55,7 @@
 
 .mission__statement__one, .mission__statement__two, .mission__statement__three, .mission__statement__four {
   display: flex;
+  padding: 1rem 0;
 }
 .mission__statement__one, .mission__statement__four {
   justify-content: center;

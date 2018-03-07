@@ -1,18 +1,20 @@
 .mainContent {
   display: flex;
-  background-image: linear-gradient(rgba(238, 245, 219,.4), rgba(238, 245, 219,.4)), url('../../images/home.jpg');
+  /* background-image: linear-gradient(rgba(230, 52, 98, .15), rgba(230, 52, 98, .15)), url('../../images/home.jpg'); */
+  background-image: url('../../images/home.jpg');
 
 
   background-size: cover;
   background-repeat: no-repeat;
 
   height: 100vh;
-
+  margin-top: -50px;
   padding: 100px 50px 50px 50px;
   justify-content: flex-end;
   flex-direction: column;
   font-family: var(--font-main-two);
-  color: var(--main-orange);
+  color: rgba(255, 68, 44,1);
+  /* color: red; */
 }
 
 .mainContent__container {
@@ -24,7 +26,7 @@
   margin: 0;
   padding: 1rem;
   box-shadow: var(--box-shadow-light);
-  background-color: rgba(238, 245, 219,.8);
+  background-color: rgba(255,255,255,.6);
   border-radius: 1px;
 
 }

@@ -12,20 +12,21 @@ class Story extends Component {
 
           <div className="row" style={{ paddingTop: 40, paddingBottom: 30, lineHeight: 0.85 }}>
             <div className='col-md-6'>
-              <img src="../images/amazing_image.jpg" className="img img-responsive" style={{ maxHeight: 800 }}/></div>
+              <img src="../images/amazing_image.jpg" className="img img-responsive" style={{ maxHeight: 800, borderRadius: 25 }}/></div>
 
             <div className="row" style={{ display: 'flex' }} >
-              <div style={{ textAlign: 'center' ,backgroundColor: '#ff442c', maxWidth: 700, maxHeight:800, padding: 50, color: '#fff', borderRadius: 25, marginTop: 15 + 'rem'}}>
+              <div style={{ textAlign: 'center' ,backgroundColor: '#ff442c', maxWidth: 700, height:800, paddingLeft: 50, paddingRight: 50, paddingTop: 200, paddingBottom: 200, color: '#fff', borderRadius: 25, }}>
                 <p style={ styles.h3 }>This is the story</p>
                 <p style={ styles.h4 }>How an image</p>
                 <p style={ styles.h5 }>Caused a guy to have an idea</p>
                 <h6 style={ styles.h6 }>That he hopes will help really cause change.</h6>
+                <h6 style={styles.h7 }> (ps. in case you are wondering, it is the dinosaur pic that caused the idea.)</h6>
               </div>
             </div>
           </div>
 
 
-          <div className="story row" style={{ paddingTop: 40, paddingBottom: 60, backgroundColor: '#fff', color: '#000000', fontSize: 1.2 + 'em' }}>
+          <div className="story row" style={{ paddingTop: 40, paddingBottom: 60, backgroundColor: '#C7EFCF', color: '#000000', fontSize: 1.2 + 'em' }}>
 
             <div className="col-md-2"></div>
             <div className="col-md-8">
@@ -36,7 +37,7 @@ class Story extends Component {
               </p>
             </div>
           </div>
-          <div className="container-fluid" style={{ paddingTop: 40, marginLeft: -10, marginRight: -10, fontSize: 1.2 + 'em', backgroundColor: '#C7FFFD'}}>
+          <div className="container-fluid" style={{ paddingTop: 40, marginLeft: -10, marginRight: -10, fontSize: 1.2 + 'em' }}>
             <h4 style={{ fontSize: 3 + 'em', marginTop: 30, textAlign: 'center' } }>Now time for a super quick Q&A</h4>
             <div className="row">
               <div className="col-md-2"></div>
@@ -69,16 +70,22 @@ const styles = {
     fontFamily: 'Lobster'
   },
   h4: {
-    fontSize: 8 + "em",
-    fontFamily: 'Shadows Into Light',
+    fontSize: 6.5 + "em",
+    fontFamily: 'Poiret One',
   },
   h5: {
-    fontSize: 3 + 'em',
-    fontFamily: 'Nunito',
+    fontSize: 2.5 + 'em',
+    fontFamily: 'Alfa Slab One',
+    marginTop: 15,
   },
   h6: {
     fontSize: 2.5 + 'em',
     fontFamily: 'Dosis',
+    marginTop: 0,
+  },
+  h7: {
+    marginTop: 4 + 'rem',
+
   }
 }
 

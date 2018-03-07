@@ -82,9 +82,9 @@ class Home extends Component {
                 </Dotdotdot>
               </div>
 
-              <div className="">
+              <div className="button__container">
                 <Link href={`/callup/${callup._id}`}>
-                  <button> Learn more about { callup.who } </button>
+                  <button className="button__learn__more"> Learn more about { callup.who } </button>
                 </Link>
               </div>
             </div>
